@@ -10,7 +10,9 @@
           <v-btn depressed elevation="1" @click="clickHandler">Add Todo</v-btn>
         </v-col>
       </v-row>
+      <v-list>
       <Todo />
+      </v-list>
     </v-container>
   </v-app>
 </template>
