@@ -4,11 +4,12 @@
       <v-list-item-content>
         <v-list-item-title>{{ todo }}</v-list-item-title>
       </v-list-item-content>
-      <v-list-item-action class>
+      <v-list-item-action >
         <v-btn icon @click="deleteHandler">
           <v-icon>mdi-delete</v-icon>
         </v-btn>
 
+        <!-- Dialog box -->
         <v-dialog v-model="dialog" width="500">
           <template v-slot:activator="{on, attrs}">
             <v-btn icon v-bind="attrs" v-on="on">
@@ -39,8 +40,9 @@
               </v-btn>
             </v-card-actions>
           </v-card>
-          
         </v-dialog>
+        <!-- Dialog box  -->
+
       </v-list-item-action>
     </v-list-item>
   </div>

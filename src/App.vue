@@ -1,10 +1,17 @@
 <template>
   <v-app class="app">
-    <h1>Todo App</h1>
+    <h1 class="text-center">Todo App</h1>
     <v-container>
       <v-form>
-        <v-text-field label="Enter Todo" v-model="input" />
-        <v-btn type="submit" depressed elevation="1" @click="clickHandler">Add Todo</v-btn>
+        <v-row justify="center">
+          <v-spacer></v-spacer>
+          <v-col cols="12" sm="6">
+            <v-text-field label="Enter Todo" v-model="input" />
+          </v-col>
+          <v-col cols="12" sm="4" class="text-center text-sm-left">
+            <v-btn type="submit" depressed elevation="1" @click="clickHandler">Add Todo</v-btn>
+          </v-col>
+        </v-row>
       </v-form>
       <ul>
         <v-list v-for="todo in todos" :key="todo.id">
@@ -54,14 +61,6 @@ export default {
 
 <style>
 .app {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   margin-top: 20px;
-}
-.list-item {
-  width: 100%!important;
 }
 </style>
