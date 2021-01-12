@@ -5,6 +5,7 @@
         <v-list-item-title>{{ todo }}</v-list-item-title>
       </v-list-item-content>
       <v-list-item-action>
+        <div>
         <!-- Dialog box -->
         <v-dialog v-model="dialog" width="500">
           <template v-slot:activator="{ on, attrs }">
@@ -46,6 +47,7 @@
         <v-btn icon @click="deleteTodo">
           <v-icon color="error">mdi-delete</v-icon>
         </v-btn>
+        </div>
       </v-list-item-action>
     </v-list-item>
   </div>
