@@ -1,0 +1,26 @@
+[debug] [2021-01-07T19:43:38.239Z] ----------------------------------------------------------------------
+[debug] [2021-01-07T19:43:38.243Z] Command:       C:\Program Files\Node js\node.exe C:\Users\Seyi Adisa\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2021-01-07T19:43:38.243Z] CLI Version:   9.1.0
+[debug] [2021-01-07T19:43:38.243Z] Platform:      win32
+[debug] [2021-01-07T19:43:38.243Z] Node Version:  v14.8.0
+[debug] [2021-01-07T19:43:38.245Z] Time:          Thu Jan 07 2021 20:43:38 GMT+0100 (West Africa Standard Time)
+[debug] [2021-01-07T19:43:38.246Z] ----------------------------------------------------------------------
+[debug] [2021-01-07T19:43:38.246Z] 
+[debug] [2021-01-07T19:43:38.309Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2021-01-07T19:43:38.387Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-01-07T19:43:38.387Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Workspaces\vue workspace\todo-app-vue
+
+Before we get started, keep in mind:
+
+  * You are currently outside your home directory
+
