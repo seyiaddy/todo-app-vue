@@ -1,6 +1,10 @@
 <template>
   <v-app class="app">
-    <h1 class="text-center">Todo App</h1>
+    <v-app-bar app flat color="white" outlined>
+      <h1>Todo App</h1>
+    </v-app-bar>
+
+    <v-main>
     <v-container>
       <v-form>
         <v-row justify="center">
@@ -19,13 +23,14 @@
         </v-list>
       </ul>
     </v-container>
+    </v-main>
   </v-app>
 </template>
 
 <script>
 import Todo from "./components/Todo";
-// import db from "./plugins/firebase";
-// import firebase from "firebase";
+import db from "./plugins/firebase";
+import firebase from "firebase";
 
 export default {
   name: "App",
@@ -45,16 +50,27 @@ export default {
       }]
     }
   },
-/*   mounted() {
-      db.collection("todos").orderBy("timstamp", "desc").onSnapshot(snapshot => {
-        this.todos.push(snapshot.docs.map(doc => ({id: doc.id, todo: doc.data().todo})));
-      });
-  }, */
+  created() {
+    this.populateTodos();
+  },
   methods: {
     clickHandler(e) {
       e.preventDefault();
 
+      db.collection("todos").add({
+        todo: this.input,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp()
+      }).then(() => {
+        this.populateTodos();
+      })
+
+      this.input = "";
     },
+    populateTodos() {
+      db.collection("todos").orderBy("timestamp", "desc").onSnapshot(snapshot => {
+      this.todos = snapshot.docs.map(doc => ({id: doc.id, todo: doc.data().todo}))
+    }, (error) => {alert(`An error occured: ${error}`)});
+    }
   }
 };
 </script>
